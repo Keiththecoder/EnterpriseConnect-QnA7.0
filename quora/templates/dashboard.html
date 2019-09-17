@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href='{% url "logout-view" %}'>Logout</a>
+Welcome,
+{{userdetail.username}}
+<br/>
+Asked Questions.
+<br/>
+{% for question in questions %}
+<li>{{question.title}}</li>
+{% endfor %}
+<br/>
+Answers.
+{% for answer in answers %}
+<li>{{answer.answer_text}} by {{answer.user.username}} </li>
+{% endfor %}
+</body>
+</html>
